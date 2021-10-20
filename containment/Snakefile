@@ -160,10 +160,8 @@ rule compute_refs:
     scaled = "{scaled}"
   conda: "envs/sourmash.yml"
   shell: """
-    sourmash compute -k 21,31,51 \
+    sourmash sketch dna -p k=21,k=31,k=51,abund,scaled={params.scaled} \
              --name-from-first \
-             --scaled {params.scaled} \
-             --track-abundance \
              -o {output} \
              {input}
   """
@@ -176,10 +174,8 @@ rule compute_reads:
     scaled = "{scaled}"
   conda: "envs/sourmash.yml"
   shell: """
-    sourmash compute -k 21,31,51 \
+    sourmash sketch dna -p k=21,k=31,k=51,scaled={params.scaled},abund \
              --name-from-first \
-             --scaled {params.scaled} \
-             --track-abundance \
              -o {output} \
              {input}
   """

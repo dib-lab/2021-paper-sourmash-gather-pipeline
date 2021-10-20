@@ -1,0 +1,13 @@
+# conda environment configuration for jupyter notebooks
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - notebook>=6,<7
+    - numpy
+    - pandas
+    - hvplot
+    - matplotlib
+    - seaborn
+    - ficus
