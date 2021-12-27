@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.00034815538780341715,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/67.fa,"NZ_JMRV01000049.1 Streptococcus parasanguinis strain C1A map unlocalized plasmid unnamed1 contig_49, whole genome shotgun sequence",3e81ebe9
+0.054228855721393035,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/67.fa,"NZ_JMRV01000049.1 Streptococcus parasanguinis strain C1A map unlocalized plasmid unnamed1 contig_49, whole genome shotgun sequence",3e81ebe9

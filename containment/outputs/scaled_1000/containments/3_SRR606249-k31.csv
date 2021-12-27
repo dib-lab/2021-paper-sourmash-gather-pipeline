@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.10116937694792971,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/3.fa,"AE000782.1 Archaeoglobus fulgidus DSM 4304, complete genome",cee0a3fb
+0.998133457769482,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/3.fa,"AE000782.1 Archaeoglobus fulgidus DSM 4304, complete genome",cee0a3fb

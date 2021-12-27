@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.0040377948285157395,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/20.fa,"AE009951.2 Fusobacterium nucleatum subsp. nucleatum ATCC 25586, complete genome",5a2301b3
+0.20149602618045817,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/20.fa,"AE009951.2 Fusobacterium nucleatum subsp. nucleatum ATCC 25586, complete genome",5a2301b3

@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.032696864913943635,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/45.fa,"CP000850.1 Salinispora arenicola CNS-205, complete genome",694196c6
+0.9874757452813547,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/45.fa,"CP000850.1 Salinispora arenicola CNS-205, complete genome",694196c6

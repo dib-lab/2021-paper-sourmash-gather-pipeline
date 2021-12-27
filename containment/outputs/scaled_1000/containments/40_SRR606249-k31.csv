@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.06212846711592657,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/40.fa,"CP000561.1 Pyrobaculum calidifontis JCM 11548, complete genome",ad83523f
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/40.fa,"CP000561.1 Pyrobaculum calidifontis JCM 11548, complete genome",ad83523f

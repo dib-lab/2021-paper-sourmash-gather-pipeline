@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.0009143987737599835,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/65.fa,"NZ_CM004381.1 Escherichia coli strain 2014C-3250 plasmid unnamed1, whole genome shotgun sequence",8e05ed2d
+0.0052285050348567005,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/65.fa,"NZ_CM004381.1 Escherichia coli strain 2014C-3250 plasmid unnamed1, whole genome shotgun sequence",8e05ed2d

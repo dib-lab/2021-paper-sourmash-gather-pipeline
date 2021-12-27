@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.04102710547976873,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/36.fa,"CP001110.1 Pelodictyon phaeoclathratiforme BU-1, complete genome",c8d75d87
+0.9980026631158455,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/36.fa,"CP001110.1 Pelodictyon phaeoclathratiforme BU-1, complete genome",c8d75d87

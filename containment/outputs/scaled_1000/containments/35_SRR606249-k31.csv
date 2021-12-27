@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.059400053594551694,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/35.fa,"NC_003272.1 Nostoc sp. PCC 7120 DNA, complete genome",264cfdad
+0.9983550376970528,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/35.fa,"NC_003272.1 Nostoc sp. PCC 7120 DNA, complete genome",264cfdad

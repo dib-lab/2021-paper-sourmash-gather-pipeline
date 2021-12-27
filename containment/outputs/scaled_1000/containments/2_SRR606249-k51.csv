@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.03099793918468452,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/2.fa,"CP001071.1 Akkermansia muciniphila ATCC BAA-835, complete genome",43f3b48e
+0.9980657640232108,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/2.fa,"CP001071.1 Akkermansia muciniphila ATCC BAA-835, complete genome",43f3b48e

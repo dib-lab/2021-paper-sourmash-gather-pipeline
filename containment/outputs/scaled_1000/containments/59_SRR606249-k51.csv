@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.11217487971156803,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/59.fa,"NZ_CH959311.1 Sulfitobacter sp. EE-36 scf_1099451318005, whole genome shotgun sequence",aced7bae
+0.9994108983799705,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/59.fa,"NZ_CH959311.1 Sulfitobacter sp. EE-36 scf_1099451318005, whole genome shotgun sequence",aced7bae
