@@ -239,7 +239,7 @@ rule containment_sigs:
     ksize = "{ksize}"
   conda: "envs/sourmash.yml"
   shell: """
-    sourmash search --threshold 0 --containment -k {params.ksize} -o {output} {input.sig} {input.metagenome}
+    sourmash search --threshold 0 --containment -k {params.ksize} -o {output} {input.sig} {input.metagenome} --ignore-abundance
   """
 
 rule containment_sample:

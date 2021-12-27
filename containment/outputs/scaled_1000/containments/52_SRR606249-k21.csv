@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.1772888535763839,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/52.fa,"CP000702.1 Thermotoga petrophila RKU-1, complete genome",3ae3ca60
+0.9994285714285714,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/52.fa,"CP000702.1 Thermotoga petrophila RKU-1, complete genome",3ae3ca60

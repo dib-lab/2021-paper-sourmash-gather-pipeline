@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.09727751201859369,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/42.fa,"BA000001.2 Pyrococcus horikoshii OT3 DNA, complete genome",5d4a4502
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/42.fa,"BA000001.2 Pyrococcus horikoshii OT3 DNA, complete genome",5d4a4502

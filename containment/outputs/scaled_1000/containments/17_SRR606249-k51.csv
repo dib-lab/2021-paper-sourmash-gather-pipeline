@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.020372903798638542,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/17.fa,"NC_008751.1 Desulfovibrio vulgaris DP4, complete genome",b28037bc
+0.6812431243124313,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/17.fa,"NC_008751.1 Desulfovibrio vulgaris DP4, complete genome",b28037bc

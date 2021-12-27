@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.0684114748038589,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/12.fa,"CP000607.1 Chlorobium phaeovibrioides DSM 265, complete genome",59aace57
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/12.fa,"CP000607.1 Chlorobium phaeovibrioides DSM 265, complete genome",59aace57

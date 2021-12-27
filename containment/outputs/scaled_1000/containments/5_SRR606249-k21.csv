@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.03115336028950666,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/5.fa,"CP000139.1 Bacteroides vulgatus ATCC 8482, complete genome",2d997eb0
+0.9968847352024922,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/5.fa,"CP000139.1 Bacteroides vulgatus ATCC 8482, complete genome",2d997eb0

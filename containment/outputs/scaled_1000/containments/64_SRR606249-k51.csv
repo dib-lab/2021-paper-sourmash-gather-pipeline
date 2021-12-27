@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-7.070147209098376e-05,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/64.fa,"NZ_GL383344.1 Cutibacterium acnes HL072PA1 Scfld0, whole genome shotgun sequence",15072608
+0.01636073423782921,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/64.fa,"NZ_GL383344.1 Cutibacterium acnes HL072PA1 Scfld0, whole genome shotgun sequence",15072608

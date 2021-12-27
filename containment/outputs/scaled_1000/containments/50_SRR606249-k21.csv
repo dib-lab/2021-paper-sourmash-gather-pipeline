@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.029047892967630773,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/50.fa,"CP000924.1 Thermoanaerobacter pseudethanolicus ATCC 33223, complete genome",f1076f45
+0.9995391705069124,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/50.fa,"CP000924.1 Thermoanaerobacter pseudethanolicus ATCC 33223, complete genome",f1076f45

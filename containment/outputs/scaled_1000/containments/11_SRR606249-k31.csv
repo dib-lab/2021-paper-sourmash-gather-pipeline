@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.0573376723482365,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/11.fa,"CP000492.1 Chlorobium phaeobacteroides DSM 266, complete genome",9902df09
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/11.fa,"CP000492.1 Chlorobium phaeobacteroides DSM 266, complete genome",9902df09

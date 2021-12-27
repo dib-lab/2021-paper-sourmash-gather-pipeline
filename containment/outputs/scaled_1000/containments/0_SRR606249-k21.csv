@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.09584943350117758,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/0.fa,"CP001472.1 Acidobacterium capsulatum ATCC 51196, complete genome",98b3b89b
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/0.fa,"CP001472.1 Acidobacterium capsulatum ATCC 51196, complete genome",98b3b89b

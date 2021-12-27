@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.005590651220428899,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/66.fa,"NZ_JNKC01000001.1 Proteiniclasticum ruminis DSM 24773 T487DRAFT_scaffold00001.1_C, whole genome shotgun sequence",2e9516ab
+0.12585034013605442,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/66.fa,"NZ_JNKC01000001.1 Proteiniclasticum ruminis DSM 24773 T487DRAFT_scaffold00001.1_C, whole genome shotgun sequence",2e9516ab

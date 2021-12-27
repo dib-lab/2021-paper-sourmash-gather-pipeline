@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.025379900874542893,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,ac2279abfcc19b9b121150046e8bf458,data/refs/55.fa,"AE017221.1 Thermus thermophilus HB27, complete genome",f2be0df7
+0.6478423015450187,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,ac2279abfcc19b9b121150046e8bf458,data/refs/55.fa,"AE017221.1 Thermus thermophilus HB27, complete genome",f2be0df7

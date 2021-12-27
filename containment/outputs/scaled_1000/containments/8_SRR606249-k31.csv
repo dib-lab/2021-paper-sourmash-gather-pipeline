@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.061834264568086494,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/8.fa,"CP000679.1 Caldicellulosiruptor saccharolyticus DSM 8903, complete genome",8951157d
+0.9996351696461145,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,2c9fa064bf20caa8ff7956c93c62cbec,data/refs/8.fa,"CP000679.1 Caldicellulosiruptor saccharolyticus DSM 8903, complete genome",8951157d

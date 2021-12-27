@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.05224272407912611,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/15.fa,"CP000568.1 Clostridium thermocellum ATCC 27405, complete genome",d12b6014
+1.0,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/15.fa,"CP000568.1 Clostridium thermocellum ATCC 27405, complete genome",d12b6014

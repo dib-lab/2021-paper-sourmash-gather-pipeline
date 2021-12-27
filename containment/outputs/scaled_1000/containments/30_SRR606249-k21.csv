@@ -1,2 +1,2 @@
 similarity,name,filename,md5,query_filename,query_name,query_md5
-0.037425863149464056,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,,7d4ed46a39a6014b698375e492ad7cdc,data/refs/30.fa,"BX950229.1 Methanococcus maripaludis strain S2, complete sequence",ff073fce
+0.9994058229352347,SRR606249.1 HWI-ST829:109:D073EACXX:2:1101:1249:2134/2,outputs/scaled_1000/reads/SRR606249.sig,7d4ed46a39a6014b698375e492ad7cdc,data/refs/30.fa,"BX950229.1 Methanococcus maripaludis strain S2, complete sequence",ff073fce
