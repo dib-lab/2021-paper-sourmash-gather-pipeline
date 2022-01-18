@@ -1,13 +1,19 @@
-# genome-grist config file
-sample:
+samples:
 - SRR606249  # podar
 - SRR1976948 # hu-s1
 - p8808mo11    # iHMP/IBD
 - SRR12324253 # zymo mock
+
 outdir: outputs.paper/
 metagenome_trim_memory: 20e9
 prefetch_memory: 65e9
-#database_taxonomy: /group/ctbrowngrp/gtdb/gtdb-rs202.taxonomy.v2.csv
-#sourmash_database_glob_pattern: /group/ctbrowngrp/gtdb/databases/ctb/gtdb-rs202.genomic.k31.sbt.zip
-sourmash_database_glob_pattern: /group/ctbrowngrp/genbank/genbank-2020.07-*.zip
-database_taxonomy: /group/ctbrowngrp/genbank/all_genbank_lineages.20200727.csv
+
+sourmash_databases:
+- /group/ctbrowngrp/genbank/genbank-2020.07-archaea-k31.zip
+- /group/ctbrowngrp/genbank/genbank-2020.07-bacteria-k31.zip
+- /group/ctbrowngrp/genbank/genbank-2020.07-fungi-k31.zip
+- /group/ctbrowngrp/genbank/genbank-2020.07-protozoa-k31.zip
+- /group/ctbrowngrp/genbank/genbank-2020.07-viral-k31.zip
+
+taxonomies:
+- /group/ctbrowngrp/genbank/all_genbank_lineages.20200727.csv

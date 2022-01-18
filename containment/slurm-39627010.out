@@ -1,0 +1,794 @@
+==========================================
+SLURM_JOB_ID = 39627010
+SLURM_NODELIST = bm6
+==========================================
++ snakemake --use-conda -j 4 -k -p
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	build_cmash_db
+	12	build_cmash_db_k
+	8	build_cmash_paper_db_k
+	1	cmash
+	12	cmash_k
+	8	cmash_paper_k
+	43
+
+[Tue Oct 19 07:33:39 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k31-n5000.h5
+    jobid: 1879
+    wildcards: ksize=31, num=5000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 31         -n 5000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k31-n5000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 07:35:52 2021]
+Finished job 1879.
+1 of 43 steps (2%) done
+
+[Tue Oct 19 07:35:52 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k31.ng, outputs/cmash_paper/db-k31-n5000.h5
+    output: outputs/cmash_paper/SRR606249-k31-n5000.csv
+    jobid: 1878
+    wildcards: sample=SRR606249, ksize=31, num=5000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k31.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k31-n5000.h5          outputs/cmash_paper/SRR606249-k31-n5000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 07:36:17 2021]
+Finished job 1878.
+2 of 43 steps (5%) done
+
+[Tue Oct 19 07:36:17 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k21-n10000.h5
+    jobid: 1872
+    wildcards: ksize=21, num=10000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 21         -n 10000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k21-n10000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 07:38:04 2021]
+Finished job 1872.
+3 of 43 steps (7%) done
+
+[Tue Oct 19 07:38:04 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k21.ng, outputs/cmash_paper/db-k21-n10000.h5
+    output: outputs/cmash_paper/SRR606249-k21-n10000.csv
+    jobid: 1871
+    wildcards: sample=SRR606249, ksize=21, num=10000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k21.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k21-n10000.h5          outputs/cmash_paper/SRR606249-k21-n10000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 07:38:18 2021]
+Finished job 1871.
+4 of 43 steps (9%) done
+
+[Tue Oct 19 07:38:18 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k51-n100000.h5, outputs/cmash/db-k51-n100000.tst
+    jobid: 1865
+    wildcards: ksize=51, num=100000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 51         -n 100000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k51-n100000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 07:54:39 2021]
+Finished job 1865.
+5 of 43 steps (12%) done
+
+[Tue Oct 19 07:54:39 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k51-n100000.h5
+    output: outputs/cmash/SRR606249-k51-n100000.csv
+    jobid: 1864
+    wildcards: sample=SRR606249, ksize=51, num=100000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k51-n100000.h5          outputs/cmash/SRR606249-k51-n100000.csv          51-51-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 08:23:50 2021]
+Finished job 1864.
+6 of 43 steps (14%) done
+
+[Tue Oct 19 08:23:50 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k21-n100000.h5, outputs/cmash/db-k21-n100000.tst
+    jobid: 1849
+    wildcards: ksize=21, num=100000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 21         -n 100000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k21-n100000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 08:38:16 2021]
+Finished job 1849.
+7 of 43 steps (16%) done
+
+[Tue Oct 19 08:38:16 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k21-n100000.h5
+    output: outputs/cmash/SRR606249-k21-n100000.csv
+    jobid: 1848
+    wildcards: sample=SRR606249, ksize=21, num=100000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k21-n100000.h5          outputs/cmash/SRR606249-k21-n100000.csv          21-21-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 09:17:36 2021]
+Finished job 1848.
+8 of 43 steps (19%) done
+
+[Tue Oct 19 09:17:36 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k31-n10000.h5
+    jobid: 1881
+    wildcards: ksize=31, num=10000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 31         -n 10000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k31-n10000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 09:19:23 2021]
+Finished job 1881.
+9 of 43 steps (21%) done
+
+[Tue Oct 19 09:19:23 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k31.ng, outputs/cmash_paper/db-k31-n10000.h5
+    output: outputs/cmash_paper/SRR606249-k31-n10000.csv
+    jobid: 1880
+    wildcards: sample=SRR606249, ksize=31, num=10000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k31.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k31-n10000.h5          outputs/cmash_paper/SRR606249-k31-n10000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 09:19:26 2021]
+Finished job 1880.
+10 of 43 steps (23%) done
+
+[Tue Oct 19 09:19:26 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k31-n100000.h5, outputs/cmash/db-k31-n100000.tst
+    jobid: 1857
+    wildcards: ksize=31, num=100000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 31         -n 100000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k31-n100000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 09:34:53 2021]
+Finished job 1857.
+11 of 43 steps (26%) done
+
+[Tue Oct 19 09:34:53 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k31-n100000.h5
+    output: outputs/cmash/SRR606249-k31-n100000.csv
+    jobid: 1856
+    wildcards: sample=SRR606249, ksize=31, num=100000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k31-n100000.h5          outputs/cmash/SRR606249-k31-n100000.csv          31-31-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 10:08:27 2021]
+Finished job 1856.
+12 of 43 steps (28%) done
+
+[Tue Oct 19 10:08:27 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k21-n10000.h5, outputs/cmash/db-k21-n10000.tst
+    jobid: 1847
+    wildcards: ksize=21, num=10000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 21         -n 10000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k21-n10000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 10:10:09 2021]
+Finished job 1847.
+13 of 43 steps (30%) done
+
+[Tue Oct 19 10:10:09 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k21-n10000.h5
+    output: outputs/cmash/SRR606249-k21-n10000.csv
+    jobid: 1846
+    wildcards: sample=SRR606249, ksize=21, num=10000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k21-n10000.h5          outputs/cmash/SRR606249-k21-n10000.csv          21-21-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 10:37:21 2021]
+Finished job 1846.
+14 of 43 steps (33%) done
+
+[Tue Oct 19 10:37:21 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k21-n1000.h5
+    jobid: 1868
+    wildcards: ksize=21, num=1000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 21         -n 1000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k21-n1000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:38:50 2021]
+Finished job 1868.
+15 of 43 steps (35%) done
+
+[Tue Oct 19 10:38:50 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k21.ng, outputs/cmash_paper/db-k21-n1000.h5
+    output: outputs/cmash_paper/SRR606249-k21-n1000.csv
+    jobid: 1866
+    wildcards: sample=SRR606249, ksize=21, num=1000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k21.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k21-n1000.h5          outputs/cmash_paper/SRR606249-k21-n1000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:38:52 2021]
+Finished job 1866.
+16 of 43 steps (37%) done
+
+[Tue Oct 19 10:38:52 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k31-n100000.h5
+    jobid: 1883
+    wildcards: ksize=31, num=100000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 31         -n 100000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k31-n100000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:53:43 2021]
+Finished job 1883.
+17 of 43 steps (40%) done
+
+[Tue Oct 19 10:53:43 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k31.ng, outputs/cmash_paper/db-k31-n100000.h5
+    output: outputs/cmash_paper/SRR606249-k31-n100000.csv
+    jobid: 1882
+    wildcards: sample=SRR606249, ksize=31, num=100000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k31.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k31-n100000.h5          outputs/cmash_paper/SRR606249-k31-n100000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:53:51 2021]
+Finished job 1882.
+18 of 43 steps (42%) done
+
+[Tue Oct 19 10:53:51 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k31-n1000.h5
+    jobid: 1877
+    wildcards: ksize=31, num=1000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 31         -n 1000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k31-n1000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:55:22 2021]
+Finished job 1877.
+19 of 43 steps (44%) done
+
+[Tue Oct 19 10:55:22 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k31.ng, outputs/cmash_paper/db-k31-n1000.h5
+    output: outputs/cmash_paper/SRR606249-k31-n1000.csv
+    jobid: 1875
+    wildcards: sample=SRR606249, ksize=31, num=1000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k31.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k31-n1000.h5          outputs/cmash_paper/SRR606249-k31-n1000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:55:23 2021]
+Finished job 1875.
+20 of 43 steps (47%) done
+
+[Tue Oct 19 10:55:23 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k21-n5000.h5
+    jobid: 1870
+    wildcards: ksize=21, num=5000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 21         -n 5000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k21-n5000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:57:11 2021]
+Finished job 1870.
+21 of 43 steps (49%) done
+
+[Tue Oct 19 10:57:11 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k21.ng, outputs/cmash_paper/db-k21-n5000.h5
+    output: outputs/cmash_paper/SRR606249-k21-n5000.csv
+    jobid: 1869
+    wildcards: sample=SRR606249, ksize=21, num=5000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k21.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k21-n5000.h5          outputs/cmash_paper/SRR606249-k21-n5000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 10:57:13 2021]
+Finished job 1869.
+22 of 43 steps (51%) done
+
+[Tue Oct 19 10:57:14 2021]
+rule build_cmash_db:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db.h5, outputs/cmash/db.tst
+    jobid: 1841
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py -t 4 -k 51 <(ls -1 data/refs/*.fa) outputs/cmash/db.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 10:58:43 2021]
+Finished job 1841.
+23 of 43 steps (53%) done
+
+[Tue Oct 19 10:58:43 2021]
+rule cmash:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db.h5
+    output: outputs/cmash/SRR606249.csv
+    jobid: 1840
+    wildcards: sample=SRR606249
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db.h5          outputs/cmash/SRR606249.csv          21-51-10
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 11:20:50 2021]
+Finished job 1840.
+24 of 43 steps (56%) done
+
+[Tue Oct 19 11:20:50 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k31-n1000.h5, outputs/cmash/db-k31-n1000.tst
+    jobid: 1851
+    wildcards: ksize=31, num=1000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 31         -n 1000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k31-n1000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 11:22:20 2021]
+Finished job 1851.
+25 of 43 steps (58%) done
+
+[Tue Oct 19 11:22:20 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k31-n1000.h5
+    output: outputs/cmash/SRR606249-k31-n1000.csv
+    jobid: 1850
+    wildcards: sample=SRR606249, ksize=31, num=1000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k31-n1000.h5          outputs/cmash/SRR606249-k31-n1000.csv          31-31-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 11:40:53 2021]
+Finished job 1850.
+26 of 43 steps (60%) done
+
+[Tue Oct 19 11:40:53 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k51-n5000.h5, outputs/cmash/db-k51-n5000.tst
+    jobid: 1861
+    wildcards: ksize=51, num=5000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 51         -n 5000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k51-n5000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 11:42:38 2021]
+Finished job 1861.
+27 of 43 steps (63%) done
+
+[Tue Oct 19 11:42:38 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k51-n5000.h5
+    output: outputs/cmash/SRR606249-k51-n5000.csv
+    jobid: 1860
+    wildcards: sample=SRR606249, ksize=51, num=5000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k51-n5000.h5          outputs/cmash/SRR606249-k51-n5000.csv          51-51-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 12:01:26 2021]
+Finished job 1860.
+28 of 43 steps (65%) done
+
+[Tue Oct 19 12:01:26 2021]
+rule build_cmash_paper_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash_paper/db-k21-n100000.h5
+    jobid: 1874
+    wildcards: ksize=21, num=100000
+    threads: 4
+
+
+    MakeDNADatabase.py         -k 21         -n 100000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash_paper/db-k21-n100000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 12:16:03 2021]
+Finished job 1874.
+29 of 43 steps (67%) done
+
+[Tue Oct 19 12:16:03 2021]
+rule cmash_paper_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash_paper/SRR606249-k21.ng, outputs/cmash_paper/db-k21-n100000.h5
+    output: outputs/cmash_paper/SRR606249-k21-n100000.csv
+    jobid: 1873
+    wildcards: sample=SRR606249, ksize=21, num=100000
+    threads: 4
+
+
+     QueryDNADatabase.py          -ct 0          -t 4          -ng outputs/cmash_paper/SRR606249-k21.ng          data/reads/SRR606249_2.fastq.gz          outputs/cmash_paper/db-k21-n100000.h5          outputs/cmash_paper/SRR606249-k21-n100000.csv
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/3a5f9a3b186998e7480c0c4f503b300c
+[Tue Oct 19 12:16:11 2021]
+Finished job 1873.
+30 of 43 steps (70%) done
+
+[Tue Oct 19 12:16:11 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k31-n10000.h5, outputs/cmash/db-k31-n10000.tst
+    jobid: 1855
+    wildcards: ksize=31, num=10000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 31         -n 10000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k31-n10000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 12:18:01 2021]
+Finished job 1855.
+31 of 43 steps (72%) done
+
+[Tue Oct 19 12:18:01 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k31-n10000.h5
+    output: outputs/cmash/SRR606249-k31-n10000.csv
+    jobid: 1854
+    wildcards: sample=SRR606249, ksize=31, num=10000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k31-n10000.h5          outputs/cmash/SRR606249-k31-n10000.csv          31-31-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 12:42:00 2021]
+Finished job 1854.
+32 of 43 steps (74%) done
+
+[Tue Oct 19 12:42:00 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k51-n10000.h5, outputs/cmash/db-k51-n10000.tst
+    jobid: 1863
+    wildcards: ksize=51, num=10000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 51         -n 10000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k51-n10000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 12:43:45 2021]
+Finished job 1863.
+33 of 43 steps (77%) done
+
+[Tue Oct 19 12:43:45 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k51-n10000.h5
+    output: outputs/cmash/SRR606249-k51-n10000.csv
+    jobid: 1862
+    wildcards: sample=SRR606249, ksize=51, num=10000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k51-n10000.h5          outputs/cmash/SRR606249-k51-n10000.csv          51-51-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:01:48 2021]
+Finished job 1862.
+34 of 43 steps (79%) done
+
+[Tue Oct 19 13:01:48 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k51-n1000.h5, outputs/cmash/db-k51-n1000.tst
+    jobid: 1859
+    wildcards: ksize=51, num=1000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 51         -n 1000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k51-n1000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:03:24 2021]
+Finished job 1859.
+35 of 43 steps (81%) done
+
+[Tue Oct 19 13:03:24 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k51-n1000.h5
+    output: outputs/cmash/SRR606249-k51-n1000.csv
+    jobid: 1858
+    wildcards: sample=SRR606249, ksize=51, num=1000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k51-n1000.h5          outputs/cmash/SRR606249-k51-n1000.csv          51-51-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:19:28 2021]
+Finished job 1858.
+36 of 43 steps (84%) done
+
+[Tue Oct 19 13:19:28 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k31-n5000.h5, outputs/cmash/db-k31-n5000.tst
+    jobid: 1853
+    wildcards: ksize=31, num=5000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 31         -n 5000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k31-n5000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:21:07 2021]
+Finished job 1853.
+37 of 43 steps (86%) done
+
+[Tue Oct 19 13:21:07 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k31-n5000.h5
+    output: outputs/cmash/SRR606249-k31-n5000.csv
+    jobid: 1852
+    wildcards: sample=SRR606249, ksize=31, num=5000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k31-n5000.h5          outputs/cmash/SRR606249-k31-n5000.csv          31-31-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:48:35 2021]
+Finished job 1852.
+38 of 43 steps (88%) done
+
+[Tue Oct 19 13:48:35 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k21-n1000.h5, outputs/cmash/db-k21-n1000.tst
+    jobid: 1843
+    wildcards: ksize=21, num=1000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 21         -n 1000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k21-n1000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 13:50:07 2021]
+Finished job 1843.
+39 of 43 steps (91%) done
+
+[Tue Oct 19 13:50:07 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k21-n1000.h5
+    output: outputs/cmash/SRR606249-k21-n1000.csv
+    jobid: 1842
+    wildcards: sample=SRR606249, ksize=21, num=1000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k21-n1000.h5          outputs/cmash/SRR606249-k21-n1000.csv          21-21-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 14:15:18 2021]
+Finished job 1842.
+40 of 43 steps (93%) done
+
+[Tue Oct 19 14:15:18 2021]
+rule build_cmash_db_k:
+    input: data/refs/0.fa, data/refs/1.fa, data/refs/2.fa, data/refs/3.fa, data/refs/4.fa, data/refs/5.fa, data/refs/6.fa, data/refs/7.fa, data/refs/8.fa, data/refs/9.fa, data/refs/10.fa, data/refs/11.fa, data/refs/12.fa, data/refs/13.fa, data/refs/14.fa, data/refs/15.fa, data/refs/16.fa, data/refs/17.fa, data/refs/18.fa, data/refs/19.fa, data/refs/20.fa, data/refs/21.fa, data/refs/22.fa, data/refs/23.fa, data/refs/24.fa, data/refs/25.fa, data/refs/26.fa, data/refs/27.fa, data/refs/28.fa, data/refs/29.fa, data/refs/30.fa, data/refs/31.fa, data/refs/32.fa, data/refs/33.fa, data/refs/34.fa, data/refs/35.fa, data/refs/36.fa, data/refs/37.fa, data/refs/38.fa, data/refs/39.fa, data/refs/40.fa, data/refs/41.fa, data/refs/42.fa, data/refs/43.fa, data/refs/44.fa, data/refs/45.fa, data/refs/46.fa, data/refs/47.fa, data/refs/48.fa, data/refs/49.fa, data/refs/50.fa, data/refs/51.fa, data/refs/52.fa, data/refs/53.fa, data/refs/54.fa, data/refs/55.fa, data/refs/56.fa, data/refs/57.fa, data/refs/58.fa, data/refs/59.fa, data/refs/60.fa, data/refs/61.fa, data/refs/62.fa, data/refs/63.fa, data/refs/64.fa, data/refs/65.fa, data/refs/66.fa, data/refs/67.fa
+    output: outputs/cmash/db-k21-n5000.h5, outputs/cmash/db-k21-n5000.tst
+    jobid: 1845
+    wildcards: ksize=21, num=5000
+    threads: 4
+
+
+    MakeStreamingDNADatabase.py         -k 21         -n 5000         -t 4         <(ls -1 data/refs/*.fa)         outputs/cmash/db-k21-n5000.h5
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 14:17:04 2021]
+Finished job 1845.
+41 of 43 steps (95%) done
+
+[Tue Oct 19 14:17:04 2021]
+rule cmash_k:
+    input: data/reads/SRR606249_2.fastq.gz, outputs/cmash/db-k21-n5000.h5
+    output: outputs/cmash/SRR606249-k21-n5000.csv
+    jobid: 1844
+    wildcards: sample=SRR606249, ksize=21, num=5000
+    threads: 4
+
+
+     StreamingQueryDNADatabase.py          -c 0          -t 4          data/reads/SRR606249_2.fastq.gz          outputs/cmash/db-k21-n5000.h5          outputs/cmash/SRR606249-k21-n5000.csv          21-21-1
+  
+Activating conda environment: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/conda/17c70f85aaacd7d5990ed8a3d38f3e48
+[Tue Oct 19 14:42:05 2021]
+Finished job 1844.
+42 of 43 steps (98%) done
+
+[Tue Oct 19 14:42:05 2021]
+localrule all:
+    input: outputs/scaled_1000/containments_SRR606249-k21.csv, outputs/scaled_1000/containments_SRR606249-k31.csv, outputs/scaled_1000/containments_SRR606249-k51.csv, outputs/scaled_1000/similarity-k21.matrix.png, outputs/scaled_1000/similarity-k31.matrix.png, outputs/scaled_1000/similarity-k51.matrix.png, outputs/scaled_1000/SRR606249-k21.csv, outputs/scaled_1000/SRR606249-k31.csv, outputs/scaled_1000/SRR606249-k51.csv, outputs/smol_1000/SRR606249-k21.csv, outputs/smol_1000/SRR606249-k31.csv, outputs/smol_1000/SRR606249-k51.csv, outputs/smol_1000/search-SRR606249-k21.csv, outputs/smol_1000/search-SRR606249-k31.csv, outputs/smol_1000/search-SRR606249-k51.csv, outputs/mash_screen/SRR606249-k21-s1000-m1.tsv, outputs/mash_screen/SRR606249-k21-s1000-m3.tsv, outputs/mash_screen/SRR606249-k21-s5000-m1.tsv, outputs/mash_screen/SRR606249-k21-s5000-m3.tsv, outputs/mash_screen/SRR606249-k21-s10000-m1.tsv, outputs/mash_screen/SRR606249-k21-s10000-m3.tsv, outputs/mash_screen/SRR606249-k21-s100000-m1.tsv, outputs/mash_screen/SRR606249-k21-s100000-m3.tsv, outputs/mash_screen/SRR606249-k31-s1000-m1.tsv, outputs/mash_screen/SRR606249-k31-s1000-m3.tsv, outputs/mash_screen/SRR606249-k31-s5000-m1.tsv, outputs/mash_screen/SRR606249-k31-s5000-m3.tsv, outputs/mash_screen/SRR606249-k31-s10000-m1.tsv, outputs/mash_screen/SRR606249-k31-s10000-m3.tsv, outputs/mash_screen/SRR606249-k31-s100000-m1.tsv, outputs/mash_screen/SRR606249-k31-s100000-m3.tsv, outputs/mash_screen/SRR606249-k21-refseq.tsv, outputs/mash_screen/SRR606249-k31-refseq.tsv, outputs/exact/SRR606249-k21.csv, outputs/exact/SRR606249-k31.csv, outputs/exact/SRR606249-k51.csv, outputs/cmash/SRR606249.csv, outputs/cmash/SRR606249-k21-n1000.csv, outputs/cmash/SRR606249-k21-n5000.csv, outputs/cmash/SRR606249-k21-n10000.csv, outputs/cmash/SRR606249-k21-n100000.csv, outputs/cmash/SRR606249-k31-n1000.csv, outputs/cmash/SRR606249-k31-n5000.csv, outputs/cmash/SRR606249-k31-n10000.csv, outputs/cmash/SRR606249-k31-n100000.csv, outputs/cmash/SRR606249-k51-n1000.csv, outputs/cmash/SRR606249-k51-n5000.csv, outputs/cmash/SRR606249-k51-n10000.csv, outputs/cmash/SRR606249-k51-n100000.csv, outputs/cmash_paper/SRR606249-k21-n1000.csv, outputs/cmash_paper/SRR606249-k21-n5000.csv, outputs/cmash_paper/SRR606249-k21-n10000.csv, outputs/cmash_paper/SRR606249-k21-n100000.csv, outputs/cmash_paper/SRR606249-k31-n1000.csv, outputs/cmash_paper/SRR606249-k31-n5000.csv, outputs/cmash_paper/SRR606249-k31-n10000.csv, outputs/cmash_paper/SRR606249-k31-n100000.csv
+    jobid: 0
+
+[Tue Oct 19 14:42:05 2021]
+Finished job 0.
+43 of 43 steps (100%) done
+Complete log: /home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/.snakemake/log/2021-10-19T073335.207904.snakemake.log
++ env
++ grep SLURM
+SLURM_NODEID=0
+SLURM_TASK_PID=93853
+SLURM_PRIO_PROCESS=0
+SLURM_SUBMIT_DIR=/home/ctbrown/2021-paper-sourmash-gather-pipeline/containment
+SLURM_CPUS_PER_TASK=8
+SLURM_PROCID=0
+SLURM_JOB_GID=1034857
+SLURMD_NODENAME=bm6
+SLURM_TASKS_PER_NODE=1
+SLURM_NNODES=1
+SLURM_JOB_NODELIST=bm6
+SLURM_CLUSTER_NAME=farm
+SLURM_NODELIST=bm6
+SLURM_NTASKS=1
+SLURM_JOB_CPUS_PER_NODE=8
+SLURM_TOPOLOGY_ADDR=bm6
+SLURM_WORKING_CLUSTER=farm:10.17.12.6:6817:9216:101
+SLURM_JOB_NAME=gather-paper
+SLURM_JOBID=39627010
+SLURM_CONF=/opt/local/etc/slurm.conf
+SLURM_NODE_ALIASES=(null)
+SLURM_JOB_QOS=ctbrowngrpbmm
+SLURM_TOPOLOGY_ADDR_PATTERN=node
+SLURM_CPUS_ON_NODE=8
+SLURM_JOB_NUM_NODES=1
+SLURM_MEM_PER_NODE=210000
+SLURM_JOB_UID=1034857
+SLURM_JOB_PARTITION=bmm
+SLURM_JOB_USER=ctbrown
+SLURM_NPROCS=1
+SLURM_SUBMIT_HOST=farm.cse.ucdavis.edu
+SLURM_JOB_ACCOUNT=ctbrowngrp
+SLURM_HOME=/share/apps/slurm-20.11.8/18.04
+SLURM_GTIDS=0
+SLURM_JOB_ID=39627010
+SLURM_LOCALID=0
++ scontrol show job 39627010
+JobId=39627010 JobName=gather-paper
+   UserId=ctbrown(1034857) GroupId=ctbrown(1034857) MCS_label=N/A
+   Priority=5138 Nice=0 Account=ctbrowngrp QOS=ctbrowngrpbmm
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=07:08:41 TimeLimit=5-00:00:00 TimeMin=N/A
+   SubmitTime=2021-10-19T07:33:04 EligibleTime=2021-10-19T07:33:04
+   AccrueTime=2021-10-19T07:33:04
+   StartTime=2021-10-19T07:33:25 EndTime=2021-10-24T07:33:25 Deadline=N/A
+   PreemptEligibleTime=2021-10-19T07:33:25 PreemptTime=None
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-10-19T07:33:25
+   Partition=bmm AllocNode:Sid=farm:1884
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=bm6
+   BatchHost=bm6
+   NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=8,node=1,billing=8
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=8 MinMemoryNode=210000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/snakemake.slurm
+   WorkDir=/home/ctbrown/2021-paper-sourmash-gather-pipeline/containment
+   StdErr=/home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/slurm-39627010.out
+   StdIn=/dev/null
+   StdOut=/home/ctbrown/2021-paper-sourmash-gather-pipeline/containment/slurm-39627010.out
+   Power=
+   MailUser=titus@idyll.org MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT
+   NtasksPerTRES:0
+
++ sstat --format JobID,MaxRSS,AveCPU -P 39627010.batch
+JobID|MaxRSS|AveCPU
+39627010.batch|10939164K|22:18:27
+Name                : gather-paper
+User                : ctbrown
+Account             : ctbrowngrp
+Partition           : bmm
+Nodes               : bm6
+Cores               : 8
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2021-10-19T07:33:04
+Start               : 2021-10-19T07:33:25
+End                 : 2021-10-19T14:42:10
+Waited              :   00:00:21
+Reserved walltime   : 5-00:00:00
+Used walltime       :   07:08:45
+Used CPU time       :   22:18:27
+% User (Computation): 99.28%
+% System (I/O)      :  0.72%
+Mem reserved        : 210000M/node
+Max Mem used        : 10.43G (bm6)
+Max Disk Write      : 84.09G (bm6)
+Max Disk Read       : 147.65G (bm6)
